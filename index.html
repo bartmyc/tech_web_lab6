@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artykuły</title>
+  </head>
+  <body class="min-h-screen bg-gray-50 p-8">
+    <main class="mx-auto max-w-3xl">
+      <h1 class="text-2xl font-bold text-primary mb-8">
+        Lista artykułów
+      </h1>
+      <div class="mb-6">
+        <label for="sort" class="font-medium mr-2">Sortuj:</label>
+        <select
+          id="sort"
+          class="border border-gray-300 rounded p-2"
+        >
+          <option value="created_at.asc">po dacie rosnąco</option>
+          <option value="created_at.desc">po dacie malejąco</option>
+          <option value="title.asc">po nazwie alfabetycznie</option>
+        </select>
+      </div>
+      <section id="articles" class="flex flex-col gap-6 mb-12">
+        <p class="text-gray-500">Ładowanie artykułów...</p>
+      </section>
+      <section>
+        <h2 class="text-xl font-bold mb-4">Dodaj nowy artykuł</h2>
+        <form id="article-form" class="flex flex-col gap-4">
+          <div class="flex flex-col gap-1">
+            <label for="title" class="font-medium">Tytuł</label>
+            <input
+              id="title"
+              type="text"
+              required
+              class="border border-gray-300 rounded p-2"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="subtitle" class="font-medium">Podtytuł</label>
+            <input
+              id="subtitle"
+              type="text"
+              required
+              class="border border-gray-300 rounded p-2"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="author" class="font-medium">Autor</label>
+            <input
+              id="author"
+              type="text"
+              required
+              class="border border-gray-300 rounded p-2"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="content" class="font-medium">Treść</label>
+            <textarea
+              id="content"
+              rows="5"
+              required
+              class="border border-gray-300 rounded p-2"
+            ></textarea>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="created_at" class="font-medium">
+              Data utworzenia
+            </label>
+            <input
+              id="created_at"
+              type="datetime-local"
+              class="border border-gray-300 rounded p-2"
+            />
+          </div>
+          <button
+            type="submit"
+            class="bg-blue-300 p-4 rounded font-medium hover:bg-blue-400"
+          >
+            Dodaj artykuł
+          </button>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
